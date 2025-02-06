@@ -1,4 +1,5 @@
-
+ollama
+langchain-ollama
 langchain
 langchain-community
 langchain-experimental
@@ -7,6 +8,4 @@ openpyxl
 tabulate
 streamlit
 transformers
-torch
-huggingface_hub
 accelerate
