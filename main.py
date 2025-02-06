@@ -16,6 +16,9 @@ from langchain_experimental.agents import create_pandas_dataframe_agent
 #from langchain_ollama import ChatOllama
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
+from huggingface_hub import login
+
+login("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")
 
 st.set_page_config(
     page_title="Chat with sheet",
