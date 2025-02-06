@@ -11,7 +11,7 @@ Original file is located at
 
 import pandas as pd
 import streamlit as st
-from langchain_agents import AgentType
+from langchain.agents import AgentType
 from langchain_experimental.agents import create_pandas_dataframe_agent
 from langchain_ollama import ChatOllama
 from transformers import AutoTokenizer, AutoModelForCausalLM
