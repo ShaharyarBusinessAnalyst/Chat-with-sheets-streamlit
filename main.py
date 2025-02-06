@@ -13,12 +13,10 @@ import pandas as pd
 import streamlit as st
 from langchain.agents import AgentType
 from langchain_experimental.agents import create_pandas_dataframe_agent
-#from langchain_ollama import ChatOllama
+from langchain_ollama import ChatOllama
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
-from huggingface_hub import login
 
-login("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")
 
 st.set_page_config(
     page_title="Chat with sheet",
@@ -60,13 +58,7 @@ if user_prompt:
   st.chat_message("user").markdown(user_prompt)
   st.session_state.chat_history.append({"role": "user", "content": user_prompt})
 
-  #llm = ChatOllama(model="gemma-2b", temperature=0)
-
-  llm = AutoModelForCausalLM.from_pretrained(
-      "google/gemma-2b-it",
-      torch_dtype = torch.bfloat16,
-      device_map = "auto"
-      )
+  llm = ChatOllama(model="gemma-2b", temperature=0)
 
   pandas_df_agent = create_pandas_dataframe_agent(
     llm,
